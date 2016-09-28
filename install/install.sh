@@ -7,5 +7,7 @@ projectName="macOS-Automator-Services"
 
 git clone https://github.com/revolter/$projectName
 
-cp -r $projectName/Delete\ file\(s\)\ permanently.workflow .
-cp -r $projectName/Copy\ file\ contents.workflow .
+cd $projectName
+
+cp -r Delete\ file\(s\)\ permanently.workflow ..
+cp -r Copy\ file\ contents.workflow ..
