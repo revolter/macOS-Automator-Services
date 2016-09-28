@@ -3,7 +3,9 @@
 mkdir -p ~/Library/Services
 cd ~/Library/Services
 
-git clone https://github.com/revolter/macOS-Automator-Services
+projectName="macOS-Automator-Services"
 
-cp -r macOS-Automator-Services/Delete\ file\(s\)\ permanently.workflow .
+git clone https://github.com/revolter/$projectName
 
+cp -r $projectName/Delete\ file\(s\)\ permanently.workflow .
+cp -r $projectName/Copy\ file\ contents.workflow .
