@@ -1,11 +1,20 @@
 #!/usr/bin/env bash
 
 projectName="macOS-Automator-Services"
+services=~/Library/Services
 
-cd ~/Library/Services/$projectName
+cd "$services/$projectName"
 
 git pull
 
-cp -r Delete\ file\(s\)\ permanently.workflow ..
-cp -r Copy\ file\ contents.workflow ..
-cp -r Empty\ trash.workflow ..
+cd src
+
+echo
+
+for workflow in *.workflow; do
+	name=$(basename "$workflow" ".workflow")
+
+	cp -r "$workflow" "$services/$name.workflow"
+
+	echo "Updated \"$name\""
+done

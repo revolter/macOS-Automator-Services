@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/Library/Services
-cd ~/Library/Services
-
 projectName="macOS-Automator-Services"
+services=~/Library/Services
+
+mkdir -p $services
+cd $services
 
 git clone https://github.com/revolter/$projectName
 
-cd $projectName
+cd "$projectName/src"
 
-cp -r Delete\ file\(s\)\ permanently.workflow ..
-cp -r Copy\ file\ contents.workflow ..
-cp -r Empty\ trash.workflow ..
+echo
+
+for workflow in *.workflow; do
+	name=$(basename "$workflow" ".workflow")
+
+	cp -r "$workflow" "$services/$name.workflow"
+
+	echo "Installed \"$name\""
+done
