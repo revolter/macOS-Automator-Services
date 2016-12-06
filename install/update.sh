@@ -5,7 +5,7 @@ services=~/Library/Services
 
 cd "$services/$projectName"
 
-git pull
+git pull --rebase --stat origin master
 
 cd src
 
